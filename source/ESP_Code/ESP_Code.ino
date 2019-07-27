@@ -115,7 +115,15 @@ void runpayload() {
 //      SOFTserial.println(line);
 //      Serial.println(line);
       String line = f.readStringUntil('\n');
-      line.replace("&lt;", "<");
+      line.replace("#lt;", "<");
+      line.replace("#lt;", "<")
+      line.replace("#cs;", "$");
+      line.replace("#fwb;", "{");
+      line.replace("#bwb;", "}");
+      line.replace("#fb;", "[");
+      line.replace("#bb;", "]");
+      line.replace("#bl;", "|");
+      line.replace("#bs;", "\");
 
       String fullkeys = line;
       int str_len = fullkeys.length()+1; 
